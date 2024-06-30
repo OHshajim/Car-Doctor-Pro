@@ -25,6 +25,7 @@ const Nav = () => {
         },
     ]
     return (
+        <div className="bg-base-100">
         <div className="navbar  text-[#444444] container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -71,6 +72,7 @@ const Nav = () => {
                 <button className="btn btn-outline btn-primary">Appointment</button>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

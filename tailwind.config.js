@@ -14,17 +14,27 @@ module.exports = {
       },
     },
   },
-  plugins: [ require('daisyui')],
+  plugins: [
+    require('daisyui'),
+  ],
   daisyui: {
-    themes: ["light",
+    themes: [
       {
         carDoctorTheme: {
           ...require("daisyui/src/theming/themes")["light"],
-          "primary": "#FF3811",
-          "secondary": "#f6d860",
+          primary: "#FF3811",
+          secondary: "teal",
 
+          ".btn-primary": {
+            "color" : "#fff"
+          },
+
+          ".btn-outline.btn-primary:hover": {
+            "color" : "#fff"
+          },
         },
       },
+      "dark",
     ],
   },
 };
