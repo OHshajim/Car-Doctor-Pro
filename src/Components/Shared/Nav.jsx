@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
 const Nav = () => {
     const links = [
         {
@@ -24,7 +25,7 @@ const Nav = () => {
         },
     ]
     return (
-        <div className="navbar  text-[#444444]">
+        <div className="navbar  text-[#444444] container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +51,7 @@ const Nav = () => {
                     </ul>
                 </div>
                 <Link href='/' className="w-28 ">
-                    <Image src="../../../public/logo.svg" alt="logo" width={100} height={80}/>
+                    <Image src="/logo.svg" alt="logo" width={107} height={87}/>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -63,10 +64,16 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-outline btn-primary">Appointment</a>
+                <div className="flex items-center gap-4">
+                <button className="text-2xl"><MdOutlineShoppingBag />
+                </button>
+                <button className="text-xl"><FaSearch/></button>
+                <button className="btn btn-outline btn-primary">Appointment</button>
+                </div>
             </div>
         </div>
     );
 };
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 export default Nav;
