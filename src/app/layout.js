@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/Components/Shared/Nav";
-import HomePage from "@/Components/HomePage/page";
 import Footer from "@/Components/Shared/Footer";
+import AuthProvider from "@/Services/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="carDoctorTheme">
       <body className={inter.className}>
-        <Nav />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
