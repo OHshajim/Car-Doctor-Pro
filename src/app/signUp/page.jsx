@@ -1,13 +1,13 @@
-'use client'
+"use client";
 import { FaFacebookF } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
-
-// import Swal from 'sweetalert2';
+import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
+
+import axios from "axios";
 const page = () => {
-  const handleSignUp = async(event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -19,6 +19,11 @@ const page = () => {
       password: password,
     };
     console.log(user);
+    const res = await axios.post(
+      "http://localhost:3000/signUp/API",
+      user
+    );
+    console.log(res);
     // SignUp(email, password)
     //     .then(result => {
     //         console.log(result.user);
@@ -46,7 +51,7 @@ const page = () => {
             />
           </div>
           <div className="card shrink-0 w-full lg:w-1/2 shadow-2xl border border-[rgb(208, 208, 208)] p-10">
-            <form onSubmit={handleSignUp} className="card-body text-zinc-700" >
+            <form onSubmit={handleSignUp} className="card-body text-zinc-700">
               <h1 className="text-3xl text-center font-bold  text-black">
                 Sign Up
               </h1>
@@ -89,7 +94,7 @@ const page = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button  className="btn btn-primary">Sign Up</button>
+                <button className="btn btn-primary">Sign Up</button>
               </div>
             </form>
             <p className="text-center">or Sign in With </p>
