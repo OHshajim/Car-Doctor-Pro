@@ -1,3 +1,4 @@
+'use client'
 import { FaFacebookF } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
 
@@ -45,7 +46,7 @@ const page = () => {
             />
           </div>
           <div className="card shrink-0 w-full lg:w-1/2 shadow-2xl border border-[rgb(208, 208, 208)] p-10">
-            <form className="card-body text-zinc-700" >
+            <form onSubmit={handleSignUp} className="card-body text-zinc-700" >
               <h1 className="text-3xl text-center font-bold  text-black">
                 Sign Up
               </h1>
@@ -88,7 +89,7 @@ const page = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary" onSubmit={handleSignUp}>Sign Up</button>
+                <button  className="btn btn-primary">Sign Up</button>
               </div>
             </form>
             <p className="text-center">or Sign in With </p>
