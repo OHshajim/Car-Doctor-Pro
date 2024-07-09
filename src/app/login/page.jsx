@@ -1,3 +1,5 @@
+"use client";
+
 import {  FaFacebookF } from 'react-icons/fa';
 import { RiLinkedinFill } from 'react-icons/ri';
 
