@@ -51,7 +51,7 @@ const page = () => {
             />
           </div>
           <div className="card shrink-0 w-full lg:w-1/2 shadow-2xl border border-[rgb(208, 208, 208)] p-10">
-            <form onSubmit={handleSignUp} className="card-body text-zinc-700">
+            <form onSubmit={handleSignUp} className="card-body text-zinc-800">
               <h1 className="text-3xl text-center font-bold  text-black">
                 Sign Up
               </h1>
