@@ -47,7 +47,7 @@ const page = () => {
                         <Image width={600} height={500} src='/images/login/login.svg' alt="" className='p-10'/>
                     </div>
                     <div className="card shrink-0 w-full lg:w-1/2 shadow-2xl border border-[rgb(208, 208, 208)] p-10">
-                        <form className="card-body" >
+                        <form onSubmit={handleLogin} className="card-body" >
                             <h1 className="text-3xl text-center font-bold text-black">Login</h1>
                             <div className="form-control">
                                 <label className="label">
