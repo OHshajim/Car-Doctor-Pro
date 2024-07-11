@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import axios from "axios";
+import Swal from "sweetalert2";
 const page = () => {
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -19,20 +20,18 @@ const page = () => {
       password: password,
     };
     console.log(user);
-    const res = await axios.post(
-      "http://localhost:3000/signUp/API",
-      user
-    );
+    const res = await axios.post("http://localhost:3000/signUp/API", user);
     console.log(res);
-    // SignUp(email, password)
-    //     .then(result => {
+    if (res) {
+      Swal.fire({
+        title: "Congratulations",
+        text: "Successfully Sign up !!!",
+        icon: "success",
+        confirmButtonText: "ok",
+      });
+      form.reset();
+    }
     //         console.log(result.user);
-    //         Swal.fire({
-    //             title: "Congratulations",
-    //             text: "Successfully Sign up !!!",
-    //             icon: "success",
-    //             confirmButtonText: 'ok'
-    //         });
     //         navigate(location?.state ? location?.state : '/')
     //     })
     //     .catch(error => { console.log(error) })
